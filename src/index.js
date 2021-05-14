@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Fragment } from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Home from "./home";
+import Header from "./header";
+import Footer from "./footer";
+import { BrowserRouter } from "react-router-dom";
+import Maproute from "./maproute";
+const Index = () => {
+  return (
+    <Fragment>
+      <Header></Header>
+      <BrowserRouter>
+        <Maproute>
+          <Home></Home>
+        </Maproute>
+      </BrowserRouter>
+      <Footer></Footer>
+    </Fragment>
+  );
+};
+
+export default Index;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <Index></Index>,
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  document.getElementById("root")
+);
