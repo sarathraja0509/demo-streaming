@@ -3,9 +3,6 @@ import useEffect from "react";
 import movieData from "./api/sample.json";
 
 const Movies = () => {
-  // console.log(movieData);
-
-  // console.log(moviesData);
   const movies = movieData.entries.filter((x) => {
     return (x.programType == "movie") & (x.releaseYear >= 2010);
   });
@@ -14,7 +11,7 @@ const Movies = () => {
   const sortedMovies = twentyOneMovies.sort((a, b) =>
     a.title > b.title ? 1 : -1
   );
-  console.log(sortedMovies);
+
   return (
     <div>
       <div

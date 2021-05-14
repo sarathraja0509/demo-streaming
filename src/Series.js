@@ -9,7 +9,6 @@ const Series = () => {
     a.title > b.title ? 1 : -1
   );
 
-  console.log(sortedSeries);
   return (
     <div>
       <div
