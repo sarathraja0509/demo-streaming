@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const Home = () => {
   const [loading, setloading] = useState(true);
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       setloading(false);
     }, 2000);
   }, []);
