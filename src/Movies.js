@@ -3,19 +3,21 @@ import movieData from "./api/sample.json";
 
 const Movies = () => {
   const [loading, setloading] = useState(true);
+  const [sortedMovies, setsortedMovie] = useState([]);
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
+      const movies = movieData.entries.filter((x) => {
+        return (x.programType == "movie") & (x.releaseYear >= 2010);
+      });
+      const twentyOneMovies = movies.slice(0, 21);
+
+      const sortedMovies = twentyOneMovies.sort((a, b) =>
+        a.title > b.title ? 1 : -1
+      );
+      setsortedMovie(sortedMovies);
       setloading(false);
     }, 2000);
   }, []);
-  const movies = movieData.entries.filter((x) => {
-    return (x.programType == "movie") & (x.releaseYear >= 2010);
-  });
-  const twentyOneMovies = movies.slice(0, 21);
-
-  const sortedMovies = twentyOneMovies.sort((a, b) =>
-    a.title > b.title ? 1 : -1
-  );
 
   return loading ? (
     <div>

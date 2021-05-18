@@ -2,18 +2,21 @@ import React, { useEffect, useState } from "react";
 import seriesdata from "./api/sample.json";
 const Series = () => {
   const [loading, setloading] = useState(true);
+  const [sortedSeries, setsortedSeries] = useState([]);
+
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
+      const series = seriesdata.entries.filter((x) => {
+        return (x.programType == "series") & (x.releaseYear >= 2010);
+      });
+      const twentyOneSeries = series.slice(0, 21);
+      const sortedSeries = twentyOneSeries.sort((a, b) =>
+        a.title > b.title ? 1 : -1
+      );
+      setsortedSeries(sortedSeries);
       setloading(false);
     }, 2000);
   }, []);
-  const series = seriesdata.entries.filter((x) => {
-    return (x.programType == "series") & (x.releaseYear >= 2010);
-  });
-  const twentyOneSeries = series.slice(0, 21);
-  const sortedSeries = twentyOneSeries.sort((a, b) =>
-    a.title > b.title ? 1 : -1
-  );
 
   return loading ? (
     <div>
