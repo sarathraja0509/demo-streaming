@@ -17,7 +17,6 @@ const Footer = () => {
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow className="p-0 pl-md-5 pr-md-5 pt-md-3 p-sm-0">
           <MDBCol md="8">
-            {/* <h5 className="title">Footer Content</h5> */}
             <div
               style={{
                 marginLeft: "0em",

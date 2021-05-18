@@ -5,26 +5,29 @@ import { useEffect } from "react";
 const Home = () => {
   const [loading, setloading] = useState(true);
   useEffect(() => {
-    setloading(false);
+    setInterval(() => {
+      setloading(false);
+    }, 2000);
   }, []);
+
   return loading ? (
     <div>
       <div
         style={{
           backgroundColor: "#414141",
           height: "80px",
-          margin: "2em",
           marginTop: "0em",
         }}
       >
         <div
           style={{
-            fontSize: "30px",
+            fontSize: "1.5em",
+            fontWeight: "500",
             fontFamily: "sans-serif",
             fontVariant: "raleway",
             color: "#FFFDEF",
             fontWeight: "normal",
-            marginLeft: "4.2em",
+            marginLeft: "1.5em",
             paddingTop: "23px",
           }}
         >
@@ -35,7 +38,7 @@ const Home = () => {
         style={{
           height: "80px",
           margin: "2em",
-          marginTop: "0em",
+          marginTop: "2em",
           fontFamily: "sans-serif",
           fontVariant: "raleway",
           marginLeft: "10em",
