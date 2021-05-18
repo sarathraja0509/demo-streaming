@@ -37,6 +37,9 @@ const error = () => {
         }}
       >
         Oops,Something went Wrong
+        <span style={{ marginLeft: "0.5em" }}>
+          <a href="/">back to home</a>{" "}
+        </span>
       </div>
     </div>
   );

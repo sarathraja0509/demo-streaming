@@ -12,7 +12,7 @@ export default function Maproute() {
         <Route path="/" exact component={Home}></Route>
         <Route path="/Movies" exact component={Movies}></Route>
         <Route path="/Series" exact component={Series}></Route>
-        <Route path="" component={Error}></Route>
+        <Route path="*" exact={true} component={Error}></Route>
       </Switch>
     </div>
   );
